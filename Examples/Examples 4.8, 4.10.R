@@ -131,6 +131,10 @@ plot(Ex, verticals=TRUE, do.points=FALSE, col='red', add=TRUE)
 
 #comparison tests
 
+llhd <- function(Sigma, S, n) {
+  - n/2*(log(det(Sigma)) + sum(diag(solve.default(Sigma, S))))
+}
+
 set.seed(1)
 n <- 10
 for (i in 1:20) {
